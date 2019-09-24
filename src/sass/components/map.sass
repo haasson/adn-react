@@ -1,0 +1,118 @@
+.map
+   height: 420px
+
+.popover
+   width: 272px
+   height: 300px
+
+
+// BALLOON
+.close-balloon
+   position: absolute
+   margin-bottom: 16px
+   width: 16px
+   height: 16px
+   left: 50%
+   transform: translateX(-50%)
+   z-index: 1000
+   cursor: pointer
+
+
+.text-white
+   position: relative
+   box-sizing: border-box
+   width: 272px
+   padding: 16px
+   background-color: #fff
+   border-radius: 5px
+   border: 1px solid #5e5e5e
+   box-shadow: 0 2px 4px 0 rgba(20, 20, 20, 0.5)
+
+.balloon
+   display: flex
+   flex-direction: column
+   align-items: center
+   text-align: center
+   &__icon
+      &_close
+         width: 16px
+         height: 16px
+         stroke: black
+
+   &__title
+      margin-top: 32px
+      margin-bottom: 24px
+      font-family: 'Hagin Caps Medium', serif
+      font-size: 24px
+      font-weight: 500
+
+   &__address
+      margin-top: 0
+      margin-bottom: 8px
+      font-family: 'Montserrat Semibold', serif
+      font-size: 12px
+      font-weight: 600
+
+   &__list
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      margin-top: 0
+      margin-bottom: 24px
+      padding: 0
+      padding-left: 12px
+      list-style: none
+      &-item
+         position: relative
+         margin: 2px 11px
+
+         font-family: 'Montserrat Regular' serif
+         font-size: 12px
+         &::before
+            +pseudo
+            width: 8px
+            height: 8px
+            top: calc(50% - 4px)
+            left: -12px
+            border-radius: 50%
+            background-color: #000
+         &_blue
+            &::before
+               background-color: #006da8
+         &_red
+            &::before
+               background-color: #da322a
+         &_green
+            &::before
+               background-color: #13a82f
+
+   &__about
+      display: flex
+      font-family: 'Montserrat Regular' serif
+      font-size: 12px
+      line-height: 22px
+
+      &-item
+         min-width: 50%
+         
+   &__btn
+      margin-top: 24px
+      background-color: $rouge
+      border: none
+      color: #fff
+
+.cluster
+   display: flex
+   justify-content: center
+   box-sizing: border-box
+   padding-top: 10px
+   width: 50px
+   height: 50px
+   color: #fff
+   font-size: 18px
+
+
+/*======================== MEDIA QUERIES ===============================*/
+@media (min-width: 1260px)
+   .map
+      height: 600px

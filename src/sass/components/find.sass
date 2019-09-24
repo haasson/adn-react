@@ -1,0 +1,57 @@
+.search
+   position: relative
+   width: 100%
+   margin-bottom: 24px
+
+   &__icon-search
+      position: absolute
+      right: 17px
+      top: 50%
+      width: 16px
+      height: 16px
+      fill: $rouge
+      transform: translateY(-50%) scaleX(-1)
+
+   &__input
+      width: 100%
+      height: 32px
+      padding: 6px 12px
+      border: 1px solid #000 
+      border-radius: 20px
+      box-sizing: border-box
+      font-family: 'Montserrat Semibold', serif
+      font-size: 11px
+      letter-spacing: 1.8px
+      text-transform: uppercase 
+      outline: none
+      +placeholder
+         color: #000
+   &__item
+      padding: 6px 10px
+      cursor: pointer
+      &:hover 
+         background-color: #f6f5f4
+
+   &__dropdown
+      position: absolute
+      width: 100%
+      left: 0
+      top: 40px
+      z-index: 1050
+      box-sizing: border-box
+      background-color: #fff
+      color: #000
+      border: 1px solid #000
+      border-radius: 5px
+      list-style: none 
+      margin: 0
+      padding: 0px
+      font-family: 'Montserrat Regular', serif
+      font-size: 14px
+      overflow: hidden
+
+/*======================== MEDIA QUERIES ===============================*/
+@media (min-width: 1260px)
+   .search
+      margin-bottom: 0
+      width: 49%

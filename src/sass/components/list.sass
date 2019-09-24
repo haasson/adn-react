@@ -1,0 +1,67 @@
+.list
+   padding: 0
+   padding-top: 24px
+   list-style: none
+   color: #000
+   background-color: #f6f5f4
+
+   &__items
+      padding: 0
+      margin: 0
+      list-style: none
+
+   &__item
+      margin-bottom: 8px
+      padding-bottom: 2px
+      box-sizing: border-box
+
+   &__content
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 16px
+      box-sizing: border-box
+      text-align: center
+      border-radius: 5px
+      box-shadow: 0 1px 2px 0 rgba(142, 141, 139, 0.5)
+      background-color: #fff
+
+   &__more
+      position: relative
+      text-align: center
+      overflow: hidden
+      margin-top: 45px
+
+   &__icon-line
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 1920px
+      height: 10px
+      stroke: gold
+      transform: translate(-50%, -50%)
+
+   &__btn
+      background-color: transparent
+      &-wrap
+         display: inline-block
+         position: relative
+         z-index: 100
+         padding: 0 20px
+         background-color: #f6f5f4
+
+
+/*======================== MEDIA QUERIES ===============================*/
+@media (min-width: 760px)
+   .list
+      &__items
+         width: 75%
+         margin: 0 auto
+
+@media (min-width: 1260px)
+   .list
+      &__items
+         width: 87%
+         margin: 0 auto
+
+   

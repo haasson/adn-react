@@ -1,0 +1,253 @@
+.header
+   position: relative
+   padding-bottom: 64px
+
+   &__topline
+      position: fixed
+      z-index: 1000
+      top: 0
+      left: 0
+      width: 100vw
+
+   &__navbar
+      height: 64px
+      display: flex
+      align-items: center
+      padding: 0 24px
+      background-color: #f6f5f4
+      box-sizing: border-box
+      // transition: 1s .3s
+      // &_white
+      //    background-color: #fff
+      //    .header__icon
+      //       &-logo
+      //          fill: $rouge
+      //       &-forum
+      //          fill: #000
+      //       &-food-menu
+      //          stroke: #000
+      //    .header
+      //       &__menu-text
+      //          color: #000
+      //       &__burger-line
+      //          background-color: #000
+      //          &::before, &::after
+      //             background-color: #000
+
+   &__logo
+      position: relative
+
+   &__menu
+      display: flex
+      align-items: center
+      margin-left: auto
+      height: 100%
+      &-wrapper
+         height: 100%
+
+      &-item
+         display: flex
+         align-items: center
+         height: 100%
+         margin-left: 30px
+         &_desktop
+            display: none
+
+      &-icon
+         font-size: 25px
+         // transition: fill .5s, stroke .5s
+         // transition-delay: .5s
+
+      &-text
+         display: none
+         margin-left: 7px
+         color: #000
+         text-transform: uppercase
+         font-size: 11px
+         letter-spacing: 1.83px
+         // transition: .5s .5s
+
+   &__location
+      display: none  
+      height: 100%
+      cursor: pointer       
+
+   &__burger
+      $width: 30px
+      position: relative
+      flex-shrink: 1
+      height: 64px
+      width: $width
+      margin-left: 30px
+      cursor: pointer
+      &-link
+         display: block
+         width: 100%
+         height: 100%
+         &_desktop
+            display: none
+      &-line
+         position: absolute
+         width: $width
+         height: 2px
+         top: 50%
+         left: 50%
+         transform: translate(-50%, -50%)
+         background-color: #000
+         transition: background-color .5s .5s
+         &::before,
+         &::after
+            +pseudo
+            width: $width
+            height: 2px
+            background-color: #000
+            transform: translateY(7px)
+            transition: background-color .5s .5s, transform .5s 0s
+         &::after
+            transform: translateY(-7px)
+
+   &__dropdown
+      display: flex
+      align-items: center
+      width: 100%
+      height: 50px
+      background-color: $rouge
+      box-sizing: border-box
+      transition: height .2s
+      transition-delay: .3s
+      overflow: hidden
+      height: 0
+      &_menu
+         justify-content: center
+      &_city
+         justify-content: flex-end
+         padding-right: 30px
+      &-active
+         height: 50px
+      &-link
+         position: relative
+         display: block
+         margin: 0 10px
+         color: white
+         text-transform: uppercase
+         font-size: 11px
+         letter-spacing: 1.83px
+         &::after
+            +pseudo
+            width: 100%
+            height: 1px
+            bottom: -3px
+            background-color: #fff
+            transform-origin: left
+            transform: scaleX(0)
+            transition: transform .3s
+         &:hover
+            &::after
+               transform: scaleX(1)
+
+   &__icon
+      &-logo
+         width: 85px
+         height: 26px
+         fill: $rouge
+
+      &-forum
+         fill: black
+         width: 27px
+         height: 20px
+
+      &-food-menu
+         stroke: black
+         fill: transparent
+         width: 18px
+         height: 24px
+
+      &-dropdown
+         display: none
+
+      &-location
+         width: 10px
+         height: 15px
+         fill: $rouge
+         font-size: 14px
+
+
+
+/*======================== MEDIA QUERIES ===============================*/
+@media (min-width: 480px)
+   .header
+      &__text
+         padding: 0 50px
+
+@media (min-width: 680px)
+   .header
+      &__navbar
+         padding: 0 50px
+      &__menu
+         &-item
+            margin-left: 48px
+         &-text
+            display: block
+
+      &__burger
+         $width: 36px
+         width: $width
+         margin-left: 48px
+         &-line
+            width: $width
+            &::before, &::after
+               width: $width
+
+
+@media (min-width: 1184px)
+   .header
+         
+      &__menu
+         margin: 0 auto
+         &-item
+            &_desktop
+               display: flex
+         &-icon
+            display: none
+            
+
+      &__location
+         display: flex
+         align-items: center
+
+      &__burger
+         $width: 46px
+         width: $width
+         margin-left: 36px
+         &-line
+            width: $width
+            transition: background-color .5s .5s
+            &::before, &::after
+               width: $width
+         &-link
+            -webkit-tap-highlight-color: transparent
+         &:hover
+            .header__burger-line
+               &::before
+                  transform: translateY(10px)
+               &::after
+                  transform: translateY(-10px)
+
+      &__icon
+         &-logo
+            width: 111px
+            height: 34px
+         &-dropdown
+            display: block
+            width: 15px
+            height: 15px
+            fill: transparent
+            stroke: $rouge
+
+@media (min-width: 1344px)
+   .header
+       &__content
+
+@media (min-width: 1680px)
+   .header
+      &__content

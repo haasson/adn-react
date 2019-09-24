@@ -1,0 +1,107 @@
+.card
+   @extend .balloon
+
+   &__title
+      @extend .balloon__title
+      margin: 0
+      font-size: 18px
+
+   &__work
+      display: none
+
+   &__type
+      display: block
+      margin-top: 7px
+      margin-bottom: 10px
+      font-family: 'Montserrat Regular', serif
+      font-size: 12px
+
+   &__distance
+      display: block
+      margin-bottom: 17px
+      padding: 2px 10px
+      background-color: $pale-peach
+      border-radius: 10px
+      font-family: 'Montserrat Semibold', serif
+      font-size: 11px
+      letter-spacing: 1.83px
+
+   &__address
+      @extend .balloon__address
+
+   &__metro
+      &-list
+         @extend .balloon__list
+         margin: 0
+      &-item
+         @extend .balloon__list-item
+         margin: 2px 15px
+         &_blue
+            &::before
+               background-color: #006da8
+         &_red
+            &::before
+               background-color: #da322a
+         &_green
+            &::before
+               background-color: #13a82f
+   &__icon
+      &-location
+         display: none
+         order: 1050
+         margin-left: auto
+         width: 16px
+         height: 24px
+         stroke-width: 1px
+         stroke: #979797
+         fill: transparent 
+
+/*======================== MEDIA QUERIES ===============================*/
+@media (min-width: 1260px)
+   .card
+      flex-direction: row
+      justify-content: space-between
+      padding: 16px 32px
+
+      &__location
+         width: 47%
+
+      &__about
+         order: 1000
+         width: 20%
+
+      &__title
+         display: inline-block
+         width: 23%
+         text-align: left
+         text-transform: uppercase
+
+      &__distance
+         display: none
+
+      &__work
+         display: block
+         font-family: 'Montserrat Regular', serif
+         font-size: 12px
+         text-align: left
+
+      &__metro-list
+         justify-content: flex-start
+         padding: 0
+
+      &__type
+         margin: 0
+         margin-bottom: 5px
+         text-align: left
+         line-height: 18px
+         font-weight: 600
+
+      &__address
+         margin: 0
+         margin-bottom: 5px
+         text-align: left
+         line-height: 18px
+
+      &__icon 
+         &-location
+            display: block

@@ -1,0 +1,169 @@
+.footer
+   display: flex
+   flex-direction: column
+   align-items: center
+   color: #000
+
+   &__content
+      &_mobile
+         padding: 43px 0
+         text-align: center
+
+      &_desktop
+         display: none
+
+   &__office
+      display: block
+      font-size: 10px
+      line-height: 24px
+      letter-spacing: 1.6px
+      text-transform: uppercase
+
+   &__phone
+      display: block
+      font-family: 'Gora', serif 
+      font-size: 24px
+      line-height: 32px
+      color: #000
+
+   &__select
+      margin: 24px auto 38px
+
+   &__copy
+      font-size: 11px
+      line-height: 24px
+      &_bottom
+         display: none
+
+   &__bottom
+      width: 100%
+      background-color: #141414
+      &-content
+         display: flex
+         justify-content: center
+         align-items: center
+   &__social
+      &-list
+         display: flex
+         justify-content: center
+         align-items: center
+         height: 48px
+
+      &-item
+         margin: 0 20px
+
+   &__developer
+      display: none
+
+   &__icon
+      &-social
+         fill: white
+         width: 16px
+         height: 16px
+
+      &-logo
+         width: 90px
+         height: 27px
+         fill: $rouge
+
+/*======================== MEDIA QUERIES ===============================*/
+@media (min-width: 1184px)
+   .footer
+      margin-top: auto
+      &__content
+         &_mobile
+            display: none
+         &_desktop
+            display: flex
+            justify-content: space-between
+            padding: 0 60px
+            padding-top: 80px
+            padding-bottom: 48px
+
+      &__item
+         display: flex
+         flex-direction: column
+         align-items: flex-start
+         padding-right: 45px
+
+         &_logo
+            padding-right: 60px
+
+         &_contact
+            width: 190px
+            padding-right: 0
+            
+      &__link
+         position: relative
+         display: inline-block
+         margin-bottom: 7px
+         font-size: 10px
+         line-height: 24px
+         letter-spacing: 1.6px
+         text-transform: uppercase
+         color: #000
+         &::before
+            +pseudo
+            width: 100%
+            height: 2px
+            bottom: 4px
+            background-color: $rouge
+            transform-origin: left
+            transform: scaleX(0)
+            transition: transform .3s
+
+         &:hover
+            &::before
+               transform: scaleX(1)
+
+      &__email
+         margin-bottom: 18px
+         font-size: 14px
+         line-height: 24px
+         letter-spacing: 1px
+         color: #000
+         text-transform: uppercase
+
+      &__address, &__phone
+         display: block
+         font-family: 'Montserrat Semibold'
+         line-height: 20px
+         font-size: 12px
+         letter-spacing: 0
+         color: #000
+         font-style: normal
+
+      &__address
+         margin: 15px 0
+
+      &__copy
+         &_bottom 
+            display: block
+            width: 250px
+            color: #8c8c8c
+
+      &__social
+         margin: 0 10px
+         &-list
+            flex-grow: 1
+
+      &__developer
+         display: block
+         width: 250px
+         &-link
+            font-size: 11px
+            line-height: 24px
+            color: #8c8c8c
+
+@media (min-width: 1260px)
+   .footer
+      &__content_desktop
+         box-sizing: border-box
+         width: 87%
+         margin: 0 auto
+         padding-left: 0
+         padding-right: 0
+
+
+
+

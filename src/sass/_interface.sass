@@ -1,0 +1,149 @@
+html, body
+   height: 100%
+
+body
+   position: relative
+   min-width: 320px
+   font-family: 'Montserrat Semibold', serif
+   font-size: 16px
+   color: white
+   background-color: #f6f5f4
+
+img
+   max-width: 100%
+
+a
+   text-decoration: none
+
+.icon
+   width: 5px
+   height: 5px
+
+.wrapper
+   max-width: 1690px
+   width: calc(100% - 50px)
+   height: 100%
+   margin: auto
+
+.section
+   &-title
+      margin-bottom: 32px
+      text-align: center
+      font-family: "Gora", sans-serif
+      font-size: 24px
+      line-height: 32px
+      color: #000
+
+.button
+   display: inline-block
+   padding: 10px 15px
+   border: 1px solid #000
+   font-size: 11px
+   color: #000
+   text-transform: uppercase
+   letter-spacing: 1.8px
+   border-radius: 20px
+   cursor: pointer
+   outline: none
+   transition: 0.3s
+
+.select-wrap
+   position: relative
+   width: 250px
+   .select2
+      font-size: 11px
+      text-transform: uppercase
+      letter-spacing: 1.8px
+      .custom-select
+         display: block
+         // width: 250px !important
+         height: 32px
+         padding: 0 5px
+         // background-color: #ccc !important
+         border-radius: 18px
+         text-align: left
+         -webkit-tap-highlight-color: transparent
+         outline: none
+      &-selection
+         &__arrow
+            display: none
+         &__rendered
+            line-height: 32px !important
+            font-weight: 600    
+
+   .icon-select-caret
+      position: absolute
+      right: 10px
+      top: 50%
+      transform: translateY(-50%)
+      fill: transparent
+      stroke: $rouge
+      width: 24px
+      height: 24px
+
+.select2-container
+   .custom-dropdown
+      font-size: 11px
+      text-transform: uppercase
+      letter-spacing: 1.8px
+      color: #000
+
+      .select2-results
+         &__option[aria-selected=true]
+            background-color: $pale
+            color: #000
+         &__option
+            padding: 8px 12px
+            &--highlighted[aria-selected]
+               background-color: $pale
+               color: #000
+
+
+.nowrap 
+   white-space: nowrap
+
+.hidden
+   display: none
+
+.slick-slide
+   outline: none
+
+input:focus::-webkit-input-placeholder,
+   color: transparent
+input:focus::-moz-placeholder, 
+   color: transparent
+input:focus:-moz-placeholder, 
+   color: transparent
+input:focus:-ms-input-placeholder, 
+   color: transparent
+
+
+=pseudo
+   position: absolute
+   content: ''
+   display: block
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+input::-ms-clear 
+   display: none
+
+
+/*======================== MEDIA QUERIES ===============================*/
+
+@media (min-width: 760px)
+   .wrapper
+      width: calc(100% - 100px)
+
+@media (min-width: 1184px)
+   body
+      display: flex
+      flex-direction: column

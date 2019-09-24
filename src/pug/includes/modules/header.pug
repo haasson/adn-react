@@ -1,0 +1,40 @@
+header.header
+
+   .header__topline
+      .header__navbar
+         a.header__logo(href="#")
+            +svg('#logo', 'header__icon-logo')
+
+         nav.header__menu
+            a.header__menu-item(href="#")
+               +svg('#forum', 'header__menu-icon header__icon-forum')
+               span.header__menu-text Ваше мнение
+            .header__menu-wrapper
+               a.header__menu-item.header__menu-item_select(href="#" data-dropdown=".header__dropdown_menu")
+                  +svg('#food-menu', 'header__menu-icon header__icon-food-menu')
+                  span.header__menu-text Наше меню
+                  +svg('#static', 'header__icon-dropdown')
+            a.header__menu-item.header__menu-item_desktop(href="#")
+               span.header__menu-text Акции
+            a.header__menu-item.header__menu-item_desktop(href="#")
+               span.header__menu-text Наши теремки
+
+         .header__location(data-dropdown=".header__dropdown_city")
+            +svg('#menu', 'header__icon-location ')
+            span.header__menu-text Москва
+
+         .header__burger
+            a.header__burger-link(href="#mfp-menu")
+               span.header__burger-line
+
+      .header__dropdown.header__dropdown_menu
+         a.header__dropdown-link(href="#") Новинки
+         a.header__dropdown-link(href="#") Завтраки
+         a.header__dropdown-link(href="#") Основное меню
+         a.header__dropdown-link(href="#") Домашние обеды
+         a.header__dropdown-link(href="#") Напитки
+
+      .header__dropdown.header__dropdown_city
+         a.header__dropdown-link(href="#") Краснодар
+         a.header__dropdown-link(href="#") Москва
+         a.header__dropdown-link(href="#") Санкт-Петербург

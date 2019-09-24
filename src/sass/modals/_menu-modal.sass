@@ -1,0 +1,307 @@
+.p-menu
+   height: 96vh
+   border-radius: 5px
+   margin: 0 auto
+   overflow-y: scroll
+   &_desktop
+      display: none
+
+   &__section
+      height: 592px
+      display: flex
+      flex-direction: column
+      align-items: center
+      box-sizing: border-box
+      background-size: cover
+      &_top
+         position: relative
+         padding-top: 32px
+         background-image: url('../img/wood.jpg')
+         color: #fff
+      &_bottom
+         padding-top: 100px
+         padding-bottom: 40px
+         background-image: url('../img/white_background.jpg')
+         color: #000
+
+   &__close-btn
+      $size: 24px
+      margin-bottom: 48px
+      width: $size
+      height: $size
+
+   &__list
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-top: 48px
+      &_bottom
+         margin-top: 0
+         margin-bottom: 110px
+
+   &__link
+      margin-bottom: 12px
+      font-size: 13px
+      line-height: 24px
+      letter-spacing: 1.95px
+      text-transform: uppercase
+      color: #fff
+      &_black
+         color: #000
+
+   &__social
+      &-list
+         position: absolute
+         left: 50%
+         bottom: 0
+         transform: translate(-50%, 50%)
+         display: flex
+         justify-content: center
+      &-item
+         display: flex
+         justify-content: center
+         align-items: center
+         width: 40px
+         height: 40px
+         margin: 0 10px
+         background-color: #000 
+         border-radius: 50%
+         font-size: 0
+      &-link
+         font-size: 0
+
+   &__select
+      margin-top: auto
+      margin-bottom: 32px
+      color: #000
+
+   &__delivery
+      width: 280px
+      height: 44px
+      text-align: center
+
+      &-text
+         font-size: 12px
+         color: #000
+
+   &__icon
+      &-close
+         stroke: white
+         width: 100%
+         height: 100%
+      &-logo
+         width: 130px
+         height: 40px
+         fill: white
+      &-social
+         width: 16px
+         height: 16px
+         fill: white
+
+.active
+   opacity: 1
+   transform: scaleX(1) translateX(0px)
+
+.custom-mfp
+   transform-origin: top
+   transform: scaleY(0)
+   transition: .3s
+   opacity: 0
+   height: 100vh
+
+.mfp-bg
+   &.mfp-ready
+      transform: scaleY(1)
+      opacity: 0.8
+   &.mfp-removing
+      opacity: 0
+      transition: .3s
+
+.mfp-wrap      
+   &.mfp-ready
+      transform: scaleY(1)
+      opacity: 1
+   &.mfp-removing
+      transform: scaleY(0)
+      opacity: 0
+      transition: .3s
+
+
+
+/*======================== MEDIA QUERIES ===============================*/
+   
+@media (min-width: 1184px)
+   .p-menu
+      &_desktop
+         display: flex
+         justify-content: flex-end
+         width: 98%
+         overflow: hidden
+      &_mobile
+         display: none
+
+      &__square
+         position: relative
+         width: 100%
+         height: 50%
+         overflow: hidden
+         transition: .3s
+         cursor: pointer
+         &::before
+            +pseudo
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            background-color: rgba(#000, 0.4)
+            transition: .3s
+            z-index: 1000
+         &:hover
+            & img
+               transform: scale(1.1)
+            &::before
+               background-color: rgba(#000, 0.6)
+
+      &__img
+         object-fit: cover
+         width: 100%
+         height: 100%
+         transition: .4s
+
+      &__symbol
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translate(-50%, -50%)
+         z-index: 1005
+   
+      &__block
+         transition: .4s
+      
+         &_left
+            width: 39%
+            opacity: 0
+            transition-delay: .5s
+            transform: translateX(150px)
+   
+         &_mid
+            width: 39%
+            opacity: 0
+            transition-delay: .3s
+            transform: translateX(150px)
+   
+         &_right
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            padding-top: 33px
+            width: 22%
+            background-color: #fff
+            opacity: 0  
+            transform-origin: right
+            transform: scaleX(0)
+
+      &__close-btn
+         $size: 32px
+         margin-bottom: auto
+         width: $size
+         height: $size
+         cursor: pointer
+         flex-shrink: 0
+         &:hover
+            .p-menu__icon-close
+               transform: scale(1.2)
+
+      &__select
+         margin-top: 40px
+         margin-bottom: 23px
+
+      &__list
+         margin-bottom: 40px
+
+      &__link
+         position: relative
+         margin-bottom: 10px
+         font-size: 12px
+         letter-spacing: 1.8px
+         color: #000
+         &::before
+            +pseudo
+            width: 100%
+            height: 2px
+            bottom: 4px
+            background-color: $rouge
+            transform-origin: left
+            transform: scaleX(0)
+            transition: transform .3s
+
+         &:hover
+            &::before
+               transform: scaleX(1)
+
+      &__social
+         &-list
+            position: static
+            display: flex
+            justify-content: center
+            margin-bottom: auto
+            transform: translate(0, 0)
+         &-item
+            background: none
+            width: auto
+            height: auto
+
+      &__delivery
+         display: flex
+         justify-content: center
+         align-items: center
+         width: 100%
+         height: 48px
+         text-align: center
+         background-color: #f6f5f4
+
+         &-text
+            font-size: 12px
+            color: #000
+
+      &__icon
+         &-symbol
+            width: 135px
+            height: 135px
+            fill: white
+            stroke: white
+            stroke-width: 1px
+         &-close
+            stroke: black
+            transform: scale(1)
+            transition: 0.2s
+         &-logo
+            width: 91px
+            height: 28px
+            fill: $rouge
+         &-social
+            fill: $rouge
+
+   .active
+      opacity: 1
+      transform: scaleX(1) translateX(0px)
+
+   .custom-mfp
+      overflow-y: scroll
+      transform: scaleY(1)
+
+   .mfp-removing
+      overflow-y: scroll
+
+   .mfp-wrap      
+      &.mfp-removing
+         overflow-y: scroll
+         transform: scaleY(1)
+
+
+@media (min-width: 1680px)
+   .p-menu
+      &__block
+         &_right
+            padding-top: 57px

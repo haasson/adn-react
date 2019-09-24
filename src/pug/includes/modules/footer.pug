@@ -1,0 +1,35 @@
+footer.footer
+   .wrapper
+      .footer__content_mobile
+         span.footer__office Центральный офис в Москве
+         a.footer__phone(href="tel:+74959562730") +7 (495) 956-27-30 
+         +addSelect('footer__select')
+         .footer__copy @ Теремок, 2017
+
+      .footer__content_desktop
+         .footer__item.footer__item_logo
+            a.footer__logo(href="#")
+               +svg('#logo', 'footer__icon-logo')
+
+         mixin footerBlock(arr)
+            .footer__item
+               - for (let i = 0; i < arr.length; i++)
+                  a.footer__link(href="")= arr[i]
+
+         +footerBlock(['О Теремке', 'Меню', 'Калькулятор калорий', 'Акции', 'Наши заведения'])
+         +footerBlock(['Контакты', 'Ваше мнение', 'События', 'Работа у нас'])
+         +footerBlock(['Предложить помещение', 'Предложить продукцию', 'Прессе', 'Партнерство', 'Связаться с руководством'])
+
+         .footer__item.footer__item_contact
+            a.footer__email(href="mailto:office@teremok.ru") office@teremok.ru
+            address.footer__address 119021, Москва, Зубовский бульвар, д. 22/39
+            a.footer__phone(href="tel:+74959562730") +7 (495) 956-27-30
+            a.footer__phone(href="tel:+74957369394") +7 (495) 736-93-94
+
+   .footer__bottom
+      .wrapper
+         .footer__bottom-content
+            .footer__copy.footer__copy_bottom @ Теремок, 2017
+            +addSocialList('footer')
+            .footer__developer
+               a.footer__developer-link(href="#") Разработка сайта - ADN Digital Studio

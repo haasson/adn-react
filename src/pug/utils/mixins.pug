@@ -1,0 +1,29 @@
+mixin item(title, descr)
+   .item
+      h2.item-title= title
+      p.item-descr= descr
+
+mixin svg(name, classList)
+   svg(class=`icon ${classList}`)
+      use(xlink:href=`assets/svg-sprite/icons.svg${name}`)
+
+mixin squareBlock(obj)
+   .p-menu__square
+      img.p-menu__img(src=`${obj.image}`)
+      .p-menu__symbol
+         +svg(obj.svg, 'p-menu__icon-symbol')
+
+mixin addSelect(classList)
+   div(class=`select-wrap ${classList}`)
+      select.select
+         option.select__option Краснодар
+         option.select__option Москва
+         option.select__option Санкт-Петербург
+      +svg('#static-mobile', 'icon-select-caret')
+
+mixin addSocialList(section)
+   div(class=`${section}__social-list`)
+      - for (let i=0; i<socialList.length; i++)
+         div(class=`${section}__social-item`)
+            a(href=`${socialList[i].link}`)
+               +svg(socialList[i].type, `${section}__icon-social`)

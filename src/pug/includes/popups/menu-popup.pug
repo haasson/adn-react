@@ -1,0 +1,56 @@
+.white-popup-block.mfp-hide#mfp-menu
+   //- Mobile 
+   .p-menu.p-menu_mobile
+      .p-menu__section_top.p-menu__section
+         .p-menu__close-btn
+            +svg('#desktop-close', 'p-menu__icon-close')
+         .p-menu__logo
+            +svg('#logo', 'p-menu__icon-logo')
+         .p-menu__list
+            a.p-menu__link(href="#") Наше меню
+            a.p-menu__link(href="#") Ваше мнение
+            a.p-menu__link(href="#") О теремке
+            a.p-menu__link(href="#") Работа у нас
+            a.p-menu__link(href="#") Наши акции
+            a.p-menu__link(href="#") События
+            a.p-menu__link(href="#") наши теремки
+            a.p-menu__link(href="#") Контакты
+         +addSocialList('p-menu')
+      .p-menu__section_bottom.p-menu__section
+         .p-menu__list.p-menu__list_bottom
+            a.p-menu__link.p-menu__link_black(href="#") калькулятор калорий
+            a.p-menu__link.p-menu__link_black(href="#") Предложить помещение
+            a.p-menu__link.p-menu__link_black(href="#") Предложить продукцию
+            a.p-menu__link.p-menu__link_black(href="#") Прессе
+            a.p-menu__link.p-menu__link_black(href="#") Партнерство
+            a.p-menu__link.p-menu__link_black(href="#") Связаться с руководством
+         +addSelect('p-menu__select')
+         .p-menu__delivery
+            span.p-menu__delivery-text Доставка наших блюд в Москве - FOODFOX
+   
+   //- Desktop 
+   .p-menu.p-menu_desktop
+      .p-menu__block.p-menu__block_left
+         +squareBlock({image: 'assets/img/p-menu-1.jpg', svg: '#o_teremke'})
+         +squareBlock({image: 'assets/img/p-menu-2.jpg', svg: '#nashe_menu'})
+      .p-menu__block.p-menu__block_mid
+         +squareBlock({image: 'assets/img/p-menu-2.jpg', svg: '#vashe_mnenie'})
+         +squareBlock({image: 'assets/img/p-menu-1.jpg', svg: '#nashi_akcii'})
+
+      .p-menu__block.p-menu__block_right
+         .p-menu__close-btn
+            +svg('#desktop-close', 'p-menu__icon-close')
+         .p-menu__logo
+            +svg('#logo', 'p-menu__icon-logo')
+         +addSelect('p-menu__select')
+         .p-menu__list
+            a.p-menu__link(href="#") События
+            a.p-menu__link(href="#") Наши заведения
+            a.p-menu__link(href="#") Работа у нас
+            a.p-menu__link(href="#") Контакты
+            a.p-menu__link(href="#") Калькулятор калорий
+         +addSocialList('p-menu')
+         .p-menu__delivery
+            span.p-menu__delivery-text Доставка наших блюд в Москве - FOODFOX
+
+      //- script(src="js/main.min.js")
