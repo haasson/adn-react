@@ -69,7 +69,7 @@ export default class extends React.Component {
                      <span class="balloon__about-item balloon__about-item_type">${obj.type}</span>
                      <span class="balloon__about-item balloon__about-item_work">${obj.work[0]} <span class="nowrap">с ${obj.work[1]} до ${obj.work[2]}</span></span>
                   </div>
-                  <button class="button balloon__btn">Подробнее</button>
+                  <a class="button balloon__btn" href="#">Подробнее</a>
                   </div>
                `,
             },

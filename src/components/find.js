@@ -25,16 +25,21 @@ export default class extends React.Component {
          let addresses =  this.props.onSearch.map(item => {
             let str = `${item.address}, ${item.name}`;
             return (
-               <li className="search__item" key={item.id} onClick={() => this.props.onCenter(item.id)}>
+               <li 
+                  className="search__item" 
+                  key={item.id} 
+                  onMouseDown={() => {
+                     this.props.onCenter(item.id);
+                     this.setState(() => { return { term: str } });
+                  }}
+               >
                   {str}
                </li>
             )
          });
 
-         return addresses.length === 0 ? 
-            (<li className="search__item">
-                  Нет совпадений...
-               </li>)
+         return addresses.length === 0 
+         ? (<li className="search__item"> Нет совпадений... </li>)
          : addresses
       }
       else return ''

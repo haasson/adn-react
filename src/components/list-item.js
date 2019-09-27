@@ -12,9 +12,9 @@ export default class extends React.Component {
          formatedDistance += i > 2 ? '0' : distance[i];
       }      
 
-      let metroList = item.metro.map((metro, i) => {
+      let metroList = item.metro.map((metro) => {
          let classes = `card__metro-item card__metro-item_${metro.color}`;
-         return <li key={i} className={classes}>{metro.name}</li>
+         return <li key={metro.color} className={classes}>{metro.name}</li>
       })
 
       return (

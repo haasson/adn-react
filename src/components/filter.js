@@ -3,6 +3,10 @@ import Select from 'react-select'
 
 export default class extends React.Component {
 
+   state = {
+
+   }
+
    render() {
       let {count, setFilter} = this.props;
 
@@ -41,7 +45,7 @@ export default class extends React.Component {
             ...styles,
             display: 'inline-block',
             color: 'black',
-            backgroundColor: state.isSelected ? '#f6f5f4' : 'white',
+            backgroundColor: state.isSelected ? '#ccc' : state.isFocused ? '#f6f5f4 ': 'white',
             cursor: 'pointer',
             fontFamily: 'Montserrat Semibold',
             fontSize: '11px',
@@ -66,7 +70,8 @@ export default class extends React.Component {
                styles={selectStyle}
                onChange={setFilter}
                defaultValue={options[0]}
-            />
+               isSearchable={false}
+         />
             <svg className="icon filter__icon-caret">
                <use xlinkHref="assets/svg-sprite/icons.svg#static-mobile"></use>
             </svg>

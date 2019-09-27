@@ -43,8 +43,7 @@ export default class extends React.Component {
             )
          });
 
-      let Button = () => {
-         return (
+      let button = (
             <div className="list__more">
                <svg className="icon list__icon-line">
                   <use xlinkHref="assets/svg-sprite/icons.svg#line"></use>
@@ -56,7 +55,6 @@ export default class extends React.Component {
                </div>
             </div>
          )
-      }
 
 
       return (
@@ -64,7 +62,7 @@ export default class extends React.Component {
             <ul className="list__items">
                {elements.slice(0, itemsToShow)}
             </ul>
-            {itemsToShow < elements.length ? <Button /> : null}
+            {itemsToShow < elements.length ? button : null}
          </div>
       )
    }
